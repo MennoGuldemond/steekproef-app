@@ -1,0 +1,45 @@
+mat-toolbar {
+    opacity: .9;
+}
+
+.reset-btn {
+    position: absolute;
+    right: 0;
+    padding: 2px 20px 0 0;
+    cursor: pointer;
+}
+
+.btn {
+    display: block;
+    height: 150px;
+    width: 60%;
+    margin: 20px auto;
+    opacity: .9
+}
+
+.green {
+    background-color: #27b376 !important;
+}
+
+.red {
+    background-color: #BF212F !important;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+}
+
+.foreground {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.inputForm {
+    margin: 20px;
+}

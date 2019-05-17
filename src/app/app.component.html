@@ -1,0 +1,28 @@
+<mat-toolbar>Steekproef app
+  <mat-icon *ngIf="inProgress === true" (click)="reset()" class="reset-btn">delete</mat-icon>
+</mat-toolbar>
+
+<div *ngIf="inProgress === false">
+  <button mat-raised-button class="btn" (click)="start()">Start</button>
+</div>
+
+<div *ngIf="needInput === true" fxLayout="column" fxLayoutAlign="center center">
+  <form fxLayout="column" fxLayoutAlign="center center" class="inputForm">
+    <mat-form-field fxFlex>
+      <input #pak matInput placeholder="Pakketten" value="1" type="number" pattern="\d*">
+    </mat-form-field>
+    <mat-form-field fxFlex>
+      <input #adr matInput placeholder="Adressen" value="1" type="number" pattern="\d*">
+    </mat-form-field>
+  </form>
+  <button fxFlex mat-raised-button (click)="formOk(pak, adr)">Bevestigen</button>
+</div>
+
+<div *ngIf="inProgress === true && needInput === false">
+  <button [disabled]="successful" mat-raised-button class="btn green" (click)="home()">Thuis</button>
+  <button [disabled]="successful" mat-raised-button class="btn red" (click)="notHome()">Niet thuis</button>
+  <button mat-raised-button class="btn" (click)="stop()">Stop</button>
+</div>
+
+<img class="background" src="../assets/erasmus.jpg">
+<img *ngIf="inDebounceTime" class="foreground" src="../assets/hourglass.svg">
